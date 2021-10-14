@@ -1,0 +1,30 @@
+@model Wedding
+
+<div class="w-30 mx-auto">
+    <h3 class="smallHead">Plan a Wedding!</h3>
+    <form asp-action="PushPlan">
+        <div class="form-group">
+            <label asp-for="WedderOne">Wedder One:</label>
+            <input class="form-control" asp-for="WedderOne" type="text">
+            <span class="alert-danger" asp-validation-for="WedderOne"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="WedderTwo">Wedder Two:</label>
+            <input class="form-control" asp-for="WedderTwo" type="text">
+            <span class="alert-danger" asp-validation-for="WedderTwo"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="WeddingDate">Date of Wedding:</label>
+            <input class="form-control" asp-for="WeddingDate" type="date">
+            <span class="alert-danger" asp-validation-for="WeddingDate"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="Address">Address:</label>
+            <input class="form-control" asp-for="Address" type="text">
+            <span class="alert-danger" asp-validation-for="Address"></span>
+        </div>
+        <div class="form-group">
+            <input style="background-color: rebeccapurple; color: white;" class="btn btn-primary" type="submit" name="submit" id="submit">
+        </div>
+    </form>
+</div>

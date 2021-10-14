@@ -1,0 +1,21 @@
+@model LoginUser
+
+<div class="w-30 mx-auto">
+    <h3 class="smallHead">Login</h3>
+    <form asp-action="LoginUser" asp-controller="Home">
+        <div class="form-group">
+            <Label asp-for="LoginEmail">Email:</Label>
+            <input class="form-control" asp-for="LoginEmail" type="text" name="LoginEmail" id="LoginEmail">
+            <span class="alert-danger" asp-validation-for="LoginEmail"></span>
+        </div>
+        <div class="form-group">
+            <Label asp-for="LoginPassword">Password:</Label>
+            <input class="form-control" asp-for="LoginPassword" type="password" name="LoginPassword" id="LoginPassword">
+            <span class="alert-danger" asp-validation-for="LoginPassword"></span>
+        </div>
+        <div class="form-group">
+            
+            <input style="background-color: rebeccapurple; color: white;" class="btn btn-primary" type="submit" name="submit" id="submit">
+        </div>
+    </form>
+</div>

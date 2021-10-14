@@ -1,0 +1,17 @@
+@model Wedding
+
+
+<a style="background-color: rebeccapurple; color: white;" class="btn btn-lg" href="/Home">Home</a>
+<a style="background-color: steelblue; color: white;" class="btn btn-lg" href="/logout">Logout</a>
+<h1>@ViewBag.singleWedding.WedderOne & @ViewBag.singleWedding.WedderTwo's Wedding!</h1>
+<h3>@ViewBag.singleWedding.WeddingDate</h3>
+<h3>Guests:</h3>
+<ul>
+    @{
+        foreach (User guest in @ViewBag.WedWithRsvpsAndUsers.WeddingRsvps.Rsvpee)
+        {
+            <li>@guest.FName</li>
+        }
+    }
+</ul>
+    

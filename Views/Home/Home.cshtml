@@ -1,0 +1,32 @@
+<h1>Welcome to the Wedding Planner, @ViewBag.User.FName!</h1>
+
+<a class="btn btn-lg" style="background-color: pink; color: white;" href="/logout">Logout</a>
+<a class="btn btn-lg" style="background-color: rebeccapurple; color: white;" href="/Plan">Plan a wedding!</a>
+
+<div class="mt-5" id="wedcontent">
+    <table class="wedTable">
+        <thead id="tableHead">
+            <tr>
+                <th>Wedding</th>
+                <th>Date</th>
+                <th>Guest Count</th>
+                <th>Action</th>
+                <th>View</th>
+            </tr>
+        </thead>
+            @foreach (Wedding wedWithUser in ViewBag.AllWeddings)
+            {
+            <tr>
+                <td>@wedWithUser.WedderOne & @wedWithUser.WedderTwo</td>
+                <td>@wedWithUser.WeddingDate</td>
+                <td>@wedWithUser.WeddingRsvps.Count()</td>
+                <td>
+                    <a style="background-color: #7540F1;" class="btn btn-sm" href="/rsvp/@wedWithUser.WeddingId">RSVP</a>
+                </td>
+                <td id="tableBtn">
+                    <a class="btn btn-sm btn-primary" href="/viewWed/@wedWithUser.WeddingId">View</a>
+                </td>
+            </tr>
+            }
+    </table>
+</div>

@@ -1,0 +1,35 @@
+@model User
+
+<div class="w-30 mx-auto">
+    <h3 class="smallHead">Register</h3>
+    <form asp-action="Register">
+        <div class="form-group">
+            <label asp-for="Email">Email:</label>
+            <input class="form-control" asp-for="Email" type="text">
+            <span class="alert-danger" asp-validation-for="Email"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="FName">First Name:</label>
+            <input class="form-control" asp-for="FName" type="text">
+            <span class="alert-danger" asp-validation-for="FName"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="LName">Last Name:</label>
+            <input class="form-control" asp-for="LName" type="text">
+            <span class="alert-danger" asp-validation-for="LName"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="Password">Password:</label>
+            <input class="form-control" asp-for="Password" type="password">
+            <span class="alert-danger" asp-validation-for="Password"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="PassCon">Confirm Password</label>
+            <input class="form-control" asp-for="PassCon" type="password">
+            <span class="alert-danger" asp-validation-for="PassCon"></span>
+        </div>
+        <div class="form-group">
+            <input style="background-color: rebeccapurple; color: white;" class="btn btn-primary" type="submit" name="submit" id="submit">
+        </div>
+    </form>
+</div>

@@ -1,0 +1,12 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+@model User
+
+
+<h1 id="bigHead" style="text-align: center;">Henlo! Please register, or login if already signed up.</h1>
+<div class="d-flex justify-content-space-between">
+    <partial id="regPart" name="RegisterPartial"/>
+    <partial id="logPart" name="LoginPartial"/>
+</div>

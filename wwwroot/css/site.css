@@ -1,0 +1,120 @@
+﻿/* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
+for details on configuring this project to bundle and minify static web assets. */
+
+a.navbar-brand {
+  white-space: normal;
+  text-align: center;
+  word-break: break-all;
+}
+
+/* Provide sufficient contrast against white background */
+a {
+  color: #0366d6;
+}
+
+.btn-primary {
+  color: #fff;
+  background-color: #1b6ec2;
+  border-color: #1861ac;
+}
+
+.nav-pills .nav-link.active, .nav-pills .show > .nav-link {
+  color: #fff;
+  background-color: #1b6ec2;
+  border-color: #1861ac;
+}
+
+/* Sticky footer styles
+-------------------------------------------------- */
+html {
+  font-size: 14px;
+}
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+.border-top {
+  border-top: 1px solid #e5e5e5;
+}
+.border-bottom {
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.box-shadow {
+  box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
+}
+
+button.accept-policy {
+  font-size: 1rem;
+  line-height: inherit;
+}
+
+/* Sticky footer styles
+-------------------------------------------------- */
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  /* Margin bottom by footer height */
+  margin-bottom: 60px;
+}
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  white-space: nowrap;
+  line-height: 60px; /* Vertically center the text there */
+}
+
+partial{
+  margin: 10px;
+}
+#bigHead{
+  color: #c712e3;
+  font-weight: 900;
+  text-shadow: 2px 2px black;
+  margin-bottom: 20px;
+  margin-top: 10px;
+}
+.smallHead{
+  color: #5e1af0;
+  font-weight: 900;
+  text-shadow: 1px 1px black;
+  margin-bottom: 10px;
+}
+label{
+  color:deeppink;
+
+}
+.wedTable{
+  border: 2px solid #FB039B;
+  text-align: left;
+  width: 70%;
+  background-color: #C044F3;
+  color: white;
+  font-size: larger;
+  font-weight: bolder;
+}
+td{
+  margin-right: 5px;
+}
+#tableHead{
+  background-color: #E7BDF8;
+  color: black;
+  border-bottom: 2px solid black;
+  margin-right: 5px;
+}
+tr:nth-child(even){
+  background-color: #5B077D;
+}
+tableBtn{
+  text-align: center;
+  color: white;
+}
+td {
+  min-height: 75px;
+}
