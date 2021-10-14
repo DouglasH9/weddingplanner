@@ -2,15 +2,17 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using weddingplanner.Models;
 
 namespace weddingplanner.Migrations
 {
     [DbContext(typeof(MyContext))]
-    partial class MyContextModelSnapshot : ModelSnapshot
+    [Migration("20211014074928_migrationeight")]
+    partial class migrationeight
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -111,12 +113,12 @@ namespace weddingplanner.Migrations
             modelBuilder.Entity("weddingplanner.Models.Rsvp", b =>
                 {
                     b.HasOne("weddingplanner.Models.User", "Guest")
-                        .WithMany("UserRsvps")
+                        .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("weddingplanner.Models.Wedding", "Wedding")
+                    b.HasOne("weddingplanner.Models.Wedding", null)
                         .WithMany("WeddingRsvps")
                         .HasForeignKey("WeddingId")
                         .OnDelete(DeleteBehavior.Cascade)

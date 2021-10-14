@@ -1,4 +1,4 @@
-@model Wedding
+
 
 
 <a style="background-color: rebeccapurple; color: white;" class="btn btn-lg" href="/Home">Home</a>
@@ -8,9 +8,9 @@
 <h3>Guests:</h3>
 <ul>
     @{
-        foreach (User guest in @ViewBag.WedWithRsvpsAndUsers.WeddingRsvps.Rsvpee)
+        foreach (Rsvp guest in @ViewBag.singleWedding.WeddingRsvps)
         {
-            <li>@guest.FName</li>
+            <li>@guest.Guest.FName @guest.Guest.LName</li>
         }
     }
 </ul>

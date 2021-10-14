@@ -27,6 +27,7 @@ namespace weddingplanner.Models
         public string PassCon {get; set;}
         public List<Wedding> CreatedWeddings {get;set;}
         public List<Rsvp> UserRsvps {get;set;}
+        // public List<Rsvp> UserRsvps {get;set;}
         public DateTime UpdatedAt {get; set;} = DateTime.Now;
         public DateTime CreatedAt {get; set;} = DateTime.Now;
     }

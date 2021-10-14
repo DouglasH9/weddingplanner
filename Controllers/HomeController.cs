@@ -140,12 +140,17 @@ namespace weddingplanner.Controllers
                     return RedirectToAction("Home");
                 }
             ViewBag.singleWedding = _context.Weddings
-            .FirstOrDefault(singleWed => singleWed.WeddingId == wedId);
+                .Include(wed => wed.WeddingRsvps)
+                    .ThenInclude(rsvp => rsvp.Guest)
+                .FirstOrDefault(singleWed => singleWed.WeddingId == wedId);
 
-            ViewBag.WedWithRsvpsAndUsers = _context.Weddings
-            .Include(response => response.WeddingRsvps)
-                .ThenInclude(user => user.Rsvpee).ToList()
-            .FirstOrDefault(wedding => wedding.WeddingId == wedId);
+            //loop through singleWedding.WeddingRsvps
+                //each WeddingRsvp has a Guest, which is a user with name, whatever
+
+            ViewBag.WedWithRsvpsAndUsers = _context.Users
+                .Include(user => user.UserRsvps)
+                    .ThenInclude(rsvp => rsvp.Wedding)
+                .Where(user => user.UserRsvps.Any(userrsvps => userrsvps.WeddingId == wedId));
             
 
             return View("ViewWed");

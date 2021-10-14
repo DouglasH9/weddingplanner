@@ -11,7 +11,7 @@ namespace weddingplanner.Models
         public int RsvpId {get;set;}
         public int UserId {get;set;}
         public int WeddingId {get; set;}
-        public List<User> Rsvpee {get;set;}
-        public Wedding RsvpWedding {get; set;}
+        public User Guest {get;set;}
+        public Wedding Wedding {get;set;}
     }
 }
