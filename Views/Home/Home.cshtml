@@ -21,7 +21,16 @@
                 <td>@wedWithUser.WeddingDate</td>
                 <td>@wedWithUser.WeddingRsvps.Count()</td>
                 <td>
-                    <a style="background-color: #7540F1;" class="btn btn-sm" href="/rsvp/@wedWithUser.WeddingId">RSVP</a>
+                    @{
+                        if(wedWithUser.WeddingRsvps.Any(rsvp => rsvp.UserId == ViewBag.User.UserId))
+                        {
+                            <a style="background-color: #7540F1;" class="btn btn-sm" href="/rsvp/@wedWithUser.WeddingId">unRSVP</a>
+                        }
+                        else
+                        {
+                            <a style="background-color: #6f8ed1;" class="btn btn-sm" href="/rsvp/@wedWithUser.WeddingId">RSVP</a>
+                        }
+                    }
                 </td>
                 <td id="tableBtn">
                     <a class="btn btn-sm btn-primary" href="/viewWed/@wedWithUser.WeddingId">View</a>

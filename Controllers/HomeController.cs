@@ -165,12 +165,23 @@ namespace weddingplanner.Controllers
                     return RedirectToAction("Home");
                 }
 
-            Rsvp newRsvp = new Rsvp();
-            newRsvp.UserId = (int)loggedUserId;
-            newRsvp.WeddingId = wedId;
-            _context.Add(newRsvp);
-            _context.SaveChanges();
+            bool rsvpExists = _context.Rsvps.Any(rsvp => rsvp.UserId == loggedUserId && rsvp.WeddingId == wedId);
 
+            if(!rsvpExists)
+            {
+                Rsvp newRsvp = new Rsvp();
+                newRsvp.UserId = (int)loggedUserId;
+                newRsvp.WeddingId = wedId;
+                _context.Add(newRsvp);
+                _context.SaveChanges();
+            }
+            else
+            {
+                Rsvp deletedRsvp = _context.Rsvps.FirstOrDefault(rsvp => rsvp.UserId == loggedUserId && rsvp.WeddingId == wedId);
+                _context.Rsvps.Remove(deletedRsvp);
+                _context.SaveChanges();
+
+            }
             return RedirectToAction("Home");
         }
 
